@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gun-yK-J0c">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Gun-yK-J0c">
                                 <rect key="frame" x="87" y="171" width="240" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -187,6 +187,9 @@
             <point key="canvasLocation" x="700" y="352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="user" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="EXg-B5-gMv"/>
     </inferredMetricsTieBreakers>

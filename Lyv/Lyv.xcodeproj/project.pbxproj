@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B306119E32E16904B09D1C0F /* Pods_Lyv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6902896D8D7BCC66303B6467 /* Pods_Lyv.framework */; };
+		B8A4135089B1A596223FDE1C /* Pods_LyvTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AA0FD2AC6B9E457247093B /* Pods_LyvTests.framework */; };
+		EC71F78CB8AF214847C26EBB /* Pods_LyvUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FE1BDE1F5C6657236E0CCE /* Pods_LyvUITests.framework */; };
 		FA104DAE228DDACE00D1C48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DAD228DDACE00D1C48D /* AppDelegate.swift */; };
 		FA104DB0228DDACE00D1C48D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = FA104DAF228DDACE00D1C48D /* art.scnassets */; };
 		FA104DB2228DDACE00D1C48D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DB1228DDACE00D1C48D /* ViewController.swift */; };
@@ -16,6 +19,16 @@
 		FA104DC5228DDAD100D1C48D /* LyvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DC4228DDAD100D1C48D /* LyvTests.swift */; };
 		FA104DD0228DDAD100D1C48D /* LyvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DCF228DDAD100D1C48D /* LyvUITests.swift */; };
 		FA104DE6228DDBAF00D1C48D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA104DE5228DDBAF00D1C48D /* Login.storyboard */; };
+		FA104DE8228DE76300D1C48D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA104DE7228DE76300D1C48D /* GoogleService-Info.plist */; };
+		FA104DEA228DEAAB00D1C48D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DE9228DEAAB00D1C48D /* Constants.swift */; };
+		FA104DEC228DEAF600D1C48D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DEB228DEAF600D1C48D /* User.swift */; };
+		FA104DEE228DEDDB00D1C48D /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DED228DEDDB00D1C48D /* Storyboard+Utility.swift */; };
+		FA104DF0228DF86C00D1C48D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DEF228DF86C00D1C48D /* LoginController.swift */; };
+		FA104DF2228E003A00D1C48D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF1228E003A00D1C48D /* UserService.swift */; };
+		FA104DF4228E00FA00D1C48D /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF3228E00FA00D1C48D /* Beacon.swift */; };
+		FA104DF6228E03AB00D1C48D /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF5228E03AB00D1C48D /* BeaconService.swift */; };
+		FA104DF8228E06A400D1C48D /* ViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF7228E06A400D1C48D /* ViewController+Utility.swift */; };
+		FA104DFA228E0C7200D1C48D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF9228E0C7200D1C48D /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41FE1BDE1F5C6657236E0CCE /* Pods_LyvUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LyvUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A6ECF58D702653ACF6739F /* Pods-Lyv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lyv.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lyv/Pods-Lyv.release.xcconfig"; sourceTree = "<group>"; };
+		6902896D8D7BCC66303B6467 /* Pods_Lyv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lyv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		812166C2CD3E3D93B5B3020D /* Pods-Lyv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lyv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lyv/Pods-Lyv.debug.xcconfig"; sourceTree = "<group>"; };
+		817C927BECEF63A66F44F4A1 /* Pods-LyvUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LyvUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LyvUITests/Pods-LyvUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9037A29FE01FB8709909AAE7 /* Pods-LyvUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LyvUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LyvUITests/Pods-LyvUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A5AA0FD2AC6B9E457247093B /* Pods_LyvTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LyvTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03B5A65C63260C1CF6D0475 /* Pods-LyvTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LyvTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LyvTests/Pods-LyvTests.release.xcconfig"; sourceTree = "<group>"; };
+		EAEFA301663CB26107981399 /* Pods-LyvTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LyvTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LyvTests/Pods-LyvTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA104DAA228DDACE00D1C48D /* Lyv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA104DAD228DDACE00D1C48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA104DAF228DDACE00D1C48D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -51,6 +73,16 @@
 		FA104DCF228DDAD100D1C48D /* LyvUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyvUITests.swift; sourceTree = "<group>"; };
 		FA104DD1228DDAD100D1C48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA104DE5228DDBAF00D1C48D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FA104DE7228DE76300D1C48D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA104DE9228DEAAB00D1C48D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA104DEB228DEAF600D1C48D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA104DED228DEDDB00D1C48D /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
+		FA104DEF228DF86C00D1C48D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FA104DF1228E003A00D1C48D /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		FA104DF3228E00FA00D1C48D /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		FA104DF5228E03AB00D1C48D /* BeaconService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
+		FA104DF7228E06A400D1C48D /* ViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Utility.swift"; sourceTree = "<group>"; };
+		FA104DF9228E0C7200D1C48D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B306119E32E16904B09D1C0F /* Pods_Lyv.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A4135089B1A596223FDE1C /* Pods_LyvTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +106,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC71F78CB8AF214847C26EBB /* Pods_LyvUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0E28B8127CD463B97136325 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6902896D8D7BCC66303B6467 /* Pods_Lyv.framework */,
+				A5AA0FD2AC6B9E457247093B /* Pods_LyvTests.framework */,
+				41FE1BDE1F5C6657236E0CCE /* Pods_LyvUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB8512A5AF36DAE73B395A98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				812166C2CD3E3D93B5B3020D /* Pods-Lyv.debug.xcconfig */,
+				42A6ECF58D702653ACF6739F /* Pods-Lyv.release.xcconfig */,
+				EAEFA301663CB26107981399 /* Pods-LyvTests.debug.xcconfig */,
+				E03B5A65C63260C1CF6D0475 /* Pods-LyvTests.release.xcconfig */,
+				817C927BECEF63A66F44F4A1 /* Pods-LyvUITests.debug.xcconfig */,
+				9037A29FE01FB8709909AAE7 /* Pods-LyvUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA104DA1228DDACE00D1C48D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +143,8 @@
 				FA104DC3228DDAD100D1C48D /* LyvTests */,
 				FA104DCE228DDAD100D1C48D /* LyvUITests */,
 				FA104DAB228DDACE00D1C48D /* Products */,
+				DB8512A5AF36DAE73B395A98 /* Pods */,
+				B0E28B8127CD463B97136325 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,12 +162,12 @@
 			isa = PBXGroup;
 			children = (
 				FA104DAD228DDACE00D1C48D /* AppDelegate.swift */,
+				FA104DDD228DDADD00D1C48D /* Services */,
 				FA104DE3228DDB4300D1C48D /* Models */,
 				FA104DE4228DDB4F00D1C48D /* Views */,
 				FA104DE1228DDB3500D1C48D /* Controllers */,
 				FA104DE0228DDB2F00D1C48D /* Storyboards */,
 				FA104DDE228DDAF900D1C48D /* Extensions */,
-				FA104DDD228DDADD00D1C48D /* Services */,
 				FA104DE2228DDB3C00D1C48D /* Helpers */,
 				FA104DDF228DDB1300D1C48D /* Supporting */,
 			);
@@ -135,6 +195,8 @@
 		FA104DDD228DDADD00D1C48D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FA104DF1228E003A00D1C48D /* UserService.swift */,
+				FA104DF5228E03AB00D1C48D /* BeaconService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,6 +204,8 @@
 		FA104DDE228DDAF900D1C48D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA104DED228DEDDB00D1C48D /* Storyboard+Utility.swift */,
+				FA104DF7228E06A400D1C48D /* ViewController+Utility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,6 +213,8 @@
 		FA104DDF228DDB1300D1C48D /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				FA104DE9228DEAAB00D1C48D /* Constants.swift */,
+				FA104DE7228DE76300D1C48D /* GoogleService-Info.plist */,
 				FA104DAF228DDACE00D1C48D /* art.scnassets */,
 				FA104DB6228DDAD100D1C48D /* Assets.xcassets */,
 				FA104DBB228DDAD100D1C48D /* Info.plist */,
@@ -170,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				FA104DB1228DDACE00D1C48D /* ViewController.swift */,
+				FA104DEF228DF86C00D1C48D /* LoginController.swift */,
+				FA104DF9228E0C7200D1C48D /* ProfileController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,6 +252,8 @@
 		FA104DE3228DDB4300D1C48D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA104DEB228DEAF600D1C48D /* User.swift */,
+				FA104DF3228E00FA00D1C48D /* Beacon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,9 +272,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA104DD4228DDAD100D1C48D /* Build configuration list for PBXNativeTarget "Lyv" */;
 			buildPhases = (
+				889B451CC12C947669229B1B /* [CP] Check Pods Manifest.lock */,
 				FA104DA6228DDACE00D1C48D /* Sources */,
 				FA104DA7228DDACE00D1C48D /* Frameworks */,
 				FA104DA8228DDACE00D1C48D /* Resources */,
+				EF6F06345E8BF3EAF8A52D95 /* [CP] Embed Pods Frameworks */,
+				534A14DE2058185BE7DA96A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,6 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA104DD7228DDAD100D1C48D /* Build configuration list for PBXNativeTarget "LyvTests" */;
 			buildPhases = (
+				7EF42EF6CA29CAC2C7D1D19E /* [CP] Check Pods Manifest.lock */,
 				FA104DBC228DDAD100D1C48D /* Sources */,
 				FA104DBD228DDAD100D1C48D /* Frameworks */,
 				FA104DBE228DDAD100D1C48D /* Resources */,
@@ -237,6 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA104DDA228DDAD100D1C48D /* Build configuration list for PBXNativeTarget "LyvUITests" */;
 			buildPhases = (
+				56CFA093306A239B07F7715C /* [CP] Check Pods Manifest.lock */,
 				FA104DC7228DDAD100D1C48D /* Sources */,
 				FA104DC8228DDAD100D1C48D /* Frameworks */,
 				FA104DC9228DDAD100D1C48D /* Resources */,
@@ -304,6 +379,7 @@
 				FA104DB7228DDAD100D1C48D /* Assets.xcassets in Resources */,
 				FA104DE6228DDBAF00D1C48D /* Login.storyboard in Resources */,
 				FA104DB5228DDACE00D1C48D /* Main.storyboard in Resources */,
+				FA104DE8228DE76300D1C48D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,13 +399,171 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		534A14DE2058185BE7DA96A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lyv/Pods-Lyv-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lyv/Pods-Lyv-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56CFA093306A239B07F7715C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LyvUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EF42EF6CA29CAC2C7D1D19E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LyvTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		889B451CC12C947669229B1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lyv-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6F06345E8BF3EAF8A52D95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lyv/Pods-Lyv-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lyv/Pods-Lyv-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA104DA6228DDACE00D1C48D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA104DF2228E003A00D1C48D /* UserService.swift in Sources */,
+				FA104DEC228DEAF600D1C48D /* User.swift in Sources */,
+				FA104DF0228DF86C00D1C48D /* LoginController.swift in Sources */,
+				FA104DF8228E06A400D1C48D /* ViewController+Utility.swift in Sources */,
 				FA104DB2228DDACE00D1C48D /* ViewController.swift in Sources */,
 				FA104DAE228DDACE00D1C48D /* AppDelegate.swift in Sources */,
+				FA104DF6228E03AB00D1C48D /* BeaconService.swift in Sources */,
+				FA104DFA228E0C7200D1C48D /* ProfileController.swift in Sources */,
+				FA104DEA228DEAAB00D1C48D /* Constants.swift in Sources */,
+				FA104DF4228E00FA00D1C48D /* Beacon.swift in Sources */,
+				FA104DEE228DEDDB00D1C48D /* Storyboard+Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +736,7 @@
 		};
 		FA104DD5228DDAD100D1C48D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812166C2CD3E3D93B5B3020D /* Pods-Lyv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -520,6 +755,7 @@
 		};
 		FA104DD6228DDAD100D1C48D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42A6ECF58D702653ACF6739F /* Pods-Lyv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -538,6 +774,7 @@
 		};
 		FA104DD8228DDAD100D1C48D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAEFA301663CB26107981399 /* Pods-LyvTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -559,6 +796,7 @@
 		};
 		FA104DD9228DDAD100D1C48D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E03B5A65C63260C1CF6D0475 /* Pods-LyvTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -580,6 +818,7 @@
 		};
 		FA104DDB228DDAD100D1C48D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 817C927BECEF63A66F44F4A1 /* Pods-LyvUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -600,6 +839,7 @@
 		};
 		FA104DDC228DDAD100D1C48D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9037A29FE01FB8709909AAE7 /* Pods-LyvUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
