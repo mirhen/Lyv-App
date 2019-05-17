@@ -11,9 +11,15 @@ import FirebaseAuth
 
 class ProfileController: UIViewController {
     
+    //IBOutlets
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    //Properties
+    var beacons = [Beacon]()
+    var selectedBeacon: Beacon?
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
@@ -32,6 +38,22 @@ class ProfileController: UIViewController {
 
         setupUI()
         // Do any additional setup after loading the view.
+        
+        UserService.beacons(for: User.current) { (beacons) in
+            self.beacons = beacons
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segue.toBeacon {
+            if let destination = segue.destination as? BeaconController {
+                if let beacon = selectedBeacon {
+                    destination.beacon = beacon
+                }
+            }
+        }
     }
     
     func setupUI() {
@@ -43,14 +65,30 @@ class ProfileController: UIViewController {
         profileImageView.clipsToBounds = true
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+}
+
+// MARK: - UITableViewDataSource
+
+extension ProfileController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return beacons.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconCell") as! BeaconCell
+        
+        cell.setUpUI()
+        
+        return cell
+    }
 
 }
+

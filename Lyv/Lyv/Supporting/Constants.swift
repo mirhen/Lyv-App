@@ -12,7 +12,7 @@ struct Constants {
     struct Segue {
         static let toWelcomeUser = "toWelcomeUser"
         static let toJournalEntries = "toJournalEntries"
-        static let toCreateBeacon = "toCreateBeacon"
+        static let toBeacon = "toBeacon"
     }
     struct UserDefaults {
         static let currentUser = "currentUser"

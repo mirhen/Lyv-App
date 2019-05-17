@@ -10,14 +10,14 @@ import UIKit
 import FirebaseStorage
 import FirebaseDatabase
 
-struct HangoutService {
+struct BeaconService {
     
-    static func create(forBeacon beacon: Beacon, fromUser: User) {
+    static func create(forBeacon beacon: Beacon) {
         // 3
         let dict = beacon.dictValue
         // 4
         let entryKey = Helper.randomAlphaNumericString(length: 28)
-        let entryRef = Database.database().reference().child("beacons").child(fromUser.uid).child(entryKey)
+        let entryRef = Database.database().reference().child("beacons").child(User.current.uid).child(entryKey)
       
         //5
         entryRef.setValue(dict)

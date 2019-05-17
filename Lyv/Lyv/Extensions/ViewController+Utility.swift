@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -17,6 +18,13 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func showAlert(withMessage message: String, title: String? = "") {
+        let alertController = UIAlertController(title: title ?? "", message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(okayAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

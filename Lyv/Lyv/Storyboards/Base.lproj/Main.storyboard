@@ -13,7 +13,7 @@
         <!--Profile-->
         <scene sceneID="Ut6-LI-MO0">
             <objects>
-                <viewController id="M2S-ah-o4L" sceneMemberID="viewController">
+                <viewController id="M2S-ah-o4L" customClass="ProfileController" customModule="Lyv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V07-eV-zB7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,15 +34,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="oNX-AC-Dxz">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BeaconCell" rowHeight="82" id="oNX-AC-Dxz">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oNX-AC-Dxz" id="f30-LK-h2Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-uF-8kJ">
+                                                    <rect key="frame" x="20" y="5" width="63" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucM-LX-bSS">
+                                                    <rect key="frame" x="91" y="9" width="303" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZh-FP-wHm">
+                                                    <rect key="frame" x="91" y="30" width="303" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="MTz-yl-TTi" kind="presentation" trigger="accessoryAction" id="EXg-B5-gMv"/>
+                                            <segue destination="MTz-yl-TTi" kind="presentation" identifier="toBeaconController" trigger="accessoryAction" id="EXg-B5-gMv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -58,12 +78,21 @@
                                 <rect key="frame" x="323" y="47" width="70" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="M2S-ah-o4L" eventType="touchUpInside" id="RiL-kM-PYw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K0x-Ml-FC6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="0LB-cq-mFL"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="J1n-Cs-jza" id="UWH-6F-0IU"/>
+                        <outlet property="profileImageView" destination="Gun-yK-J0c" id="ocD-na-kYU"/>
+                        <outlet property="tableView" destination="nsH-Yg-vRb" id="obv-Wv-WxP"/>
+                        <outlet property="usernameLabel" destination="GU5-Hh-ia8" id="Maf-1F-vog"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oq7-iq-mQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,29 +101,43 @@
         <!--Home-->
         <scene sceneID="lDw-hd-Qjt">
             <objects>
-                <viewController id="wvE-xj-cK4" sceneMemberID="viewController">
+                <viewController id="wvE-xj-cK4" customClass="HomeController" customModule="Lyv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XFP-Gd-Zet">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-Nm-S0n">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4U-3K-imV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-oP-vz1">
-                                <rect key="frame" x="154" y="740" width="105" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-oP-vz1">
+                                <rect key="frame" x="154.5" y="739" width="105" height="44"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="40K-6K-jkX"/>
+                                    <constraint firstAttribute="width" constant="105" id="RqX-Ru-AHP"/>
+                                </constraints>
                                 <state key="normal" title="Add Beacon"/>
                                 <connections>
+                                    <action selector="addButtonPressed:" destination="wvE-xj-cK4" eventType="touchUpInside" id="piC-6q-S8c"/>
                                     <segue destination="MTz-yl-TTi" kind="presentation" id="3EQ-7X-eML"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b2i-oP-vz1" firstAttribute="centerX" secondItem="XFP-Gd-Zet" secondAttribute="centerX" id="3hg-US-qAL"/>
+                            <constraint firstItem="e4U-3K-imV" firstAttribute="trailing" secondItem="6fp-vq-vnJ" secondAttribute="trailing" id="6w5-CR-4j7"/>
+                            <constraint firstItem="e4U-3K-imV" firstAttribute="bottom" secondItem="6fp-vq-vnJ" secondAttribute="bottom" id="RjG-Ci-jjf"/>
+                            <constraint firstItem="e4U-3K-imV" firstAttribute="leading" secondItem="6fp-vq-vnJ" secondAttribute="leading" id="Uwp-6h-Fmq"/>
+                            <constraint firstItem="6fp-vq-vnJ" firstAttribute="bottom" secondItem="b2i-oP-vz1" secondAttribute="bottom" constant="30" id="Yf4-y2-7eJ"/>
+                            <constraint firstItem="e4U-3K-imV" firstAttribute="top" secondItem="XFP-Gd-Zet" secondAttribute="top" id="ivp-95-Rly"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6fp-vq-vnJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="fPu-60-ECr"/>
+                    <connections>
+                        <outlet property="sceneView" destination="e4U-3K-imV" id="umB-Lg-Yoh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlL-fT-7RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="-855" y="417"/>
         </scene>
-        <!--View Controller-->
+        <!--Beacon Controller-->
         <scene sceneID="fUL-x2-fC4">
             <objects>
-                <viewController id="MTz-yl-TTi" sceneMemberID="viewController">
+                <viewController id="MTz-yl-TTi" customClass="BeaconController" customModule="Lyv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wct-p1-K7t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,6 +206,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add Image"/>
+                                <connections>
+                                    <action selector="imageButtonPressed:" destination="MTz-yl-TTi" eventType="touchUpInside" id="hBW-rf-xjv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAY-Tf-NFj">
                                 <rect key="frame" x="64" y="745" width="284" height="44"/>
@@ -171,18 +217,32 @@
                                 <state key="normal" title="Launch Beacon">
                                     <color key="titleColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="launchButtonPressed:" destination="MTz-yl-TTi" eventType="touchUpInside" id="d2N-F9-lUS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epw-VA-1QO">
                                 <rect key="frame" x="26" y="44" width="53" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="MTz-yl-TTi" eventType="touchUpInside" id="5C2-g9-ezZ"/>
+                                    <segue destination="sEd-j5-bb1" kind="unwind" unwindAction="exitToHomeWithSegue:" id="N7A-Jc-XRK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Rv2-kf-bnT"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="Fbd-J0-gDZ" id="4pb-kw-9tY"/>
+                        <outlet property="distanceSlider" destination="FL9-8h-wCB" id="gYv-mR-Vd2"/>
+                        <outlet property="imageButton" destination="Q85-D6-pkX" id="gYT-mF-zrN"/>
+                        <outlet property="nameTextField" destination="Iz5-vH-8Sb" id="60y-Kt-baJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGT-QS-hgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sEd-j5-bb1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="700" y="352"/>
         </scene>
@@ -191,6 +251,6 @@
         <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EXg-B5-gMv"/>
+        <segue reference="3EQ-7X-eML"/>
     </inferredMetricsTieBreakers>
 </document>
