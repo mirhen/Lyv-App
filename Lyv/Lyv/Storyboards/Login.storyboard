@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9I-Ij-h5e">
-                                <rect key="frame" x="135" y="418" width="144" height="60"/>
+                                <rect key="frame" x="142" y="418" width="130" height="60"/>
                                 <color key="backgroundColor" red="0.98820984359999997" green="0.98443007469999999" blue="0.97647309299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="b8a-FC-rUO"/>
@@ -44,11 +44,24 @@
                                     <action selector="loginButtonTapped:" destination="KMd-pH-hPa" eventType="touchUpInside" id="L9C-60-zcp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjc-Dp-KDi">
+                                <rect key="frame" x="127.5" y="493" width="159" height="60"/>
+                                <color key="backgroundColor" red="0.98820984359999997" green="0.98443007469999999" blue="0.97647309299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="J40-ET-Rjq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="QuicksandBook-Regular" family="Quicksand" pointSize="17"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" red="0.58390480280000001" green="0.320109427" blue="0.613871634" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="V9I-Ij-h5e" firstAttribute="centerY" secondItem="Bth-FF-aqm" secondAttribute="centerY" id="HBI-yJ-Fp7"/>
+                            <constraint firstItem="Tjc-Dp-KDi" firstAttribute="top" secondItem="V9I-Ij-h5e" secondAttribute="bottom" constant="15" id="R4R-g2-f6f"/>
                             <constraint firstItem="V9I-Ij-h5e" firstAttribute="centerX" secondItem="Bth-FF-aqm" secondAttribute="centerX" id="XNv-ez-38n"/>
+                            <constraint firstItem="Tjc-Dp-KDi" firstAttribute="centerX" secondItem="Bth-FF-aqm" secondAttribute="centerX" id="vrI-6c-2gU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o39-Oy-ZiB"/>
                     </view>

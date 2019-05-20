@@ -39,7 +39,11 @@ class ProfileController: UIViewController {
         setupUI()
         // Do any additional setup after loading the view.
         
-        UserService.beacons(for: User.current) { (beacons) in
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UserService.getBeacons(for: User.current) { (beacons) in
             self.beacons = beacons
             
             self.tableView.reloadData()

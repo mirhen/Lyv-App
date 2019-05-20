@@ -33,9 +33,7 @@ struct UserService {
     }
     
     static func updateUserValues(_ user: User) {
-        let userAttrs = ["username": user.username,
-                         "profileURL": user.profileURL,
-                         "beacons": user.beacons] as [String : Any]
+        let userAttrs = user.dictValue
         
         let ref = Database.database().reference().child("users").child(user.uid)
         ref.setValue(userAttrs) { (error, ref) in
@@ -73,17 +71,17 @@ struct UserService {
         })
     }
     
-    static func beacons(for user: User, completion: @escaping ([Beacon]) -> Void) {
-        let ref = Database.database().reference().child("beacons").child(user.uid)
+    static func getBeacons(for user: User, completion: @escaping ([Beacon]) -> Void) {
+        let ref = Database.database().reference().child("beacons")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
             
-            let beacons = snapshot.reversed().compactMap(Beacon.init)
-            print(beacons.map {$0.title} )
-            
+            let beacons = snapshot.reversed().compactMap(Beacon.init).filter {$0.uid != user.uid }
+
+            User.current.beacons = beacons.map{ $0.key! }
             completion(beacons)
         })
     }

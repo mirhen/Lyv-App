@@ -18,6 +18,14 @@ class User: NSObject {
     var beacons: [String] = []
     var profileURL: String = ""
     
+    
+    var dictValue: [String : Any] {
+        return ["uid" : uid,
+                "username" : username,
+                "beacons" : beacons,
+                "profileURL": profileURL]
+    }
+    
     // MARK: - Init
     
     init(uid: String, username: String) {
@@ -37,6 +45,7 @@ class User: NSObject {
         if let beacons = dict["beacons"] as? [String] {
             self.beacons = beacons
         }
+        
         if let profileURL = dict["profileURL"] as? String {
             self.profileURL = profileURL
         }

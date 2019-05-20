@@ -14,6 +14,9 @@ target 'Lyv' do
   pod 'Kingfisher', '~> 4.0'
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'ARCL'
+  pod 'Alamofire'
+  pod 'Firebase/Firestore'
   
 
   target 'LyvTests' do

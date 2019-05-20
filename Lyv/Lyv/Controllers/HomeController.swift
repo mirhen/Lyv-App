@@ -15,10 +15,15 @@ class HomeController: UIViewController, ARSCNViewDelegate {
     //IBOutlets
     @IBOutlet var sceneView: ARSCNView!
     
+    //Properties
+    var beacons: [Beacon] = []
+    
     @IBAction func addButtonPressed(_ sender: Any) {
     }
     
     @IBAction func exitToHome(segue: UIStoryboardSegue) { }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,10 @@ class HomeController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        BeaconService.beacons { (beacons) in
+            print(beacons)
+        }
     }
     
 

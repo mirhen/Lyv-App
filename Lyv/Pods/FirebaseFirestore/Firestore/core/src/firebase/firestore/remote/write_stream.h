@@ -24,10 +24,12 @@
 #import <Foundation/Foundation.h>
 #include <memory>
 #include <string>
+#include <vector>
 
-#include "Firestore/core/src/firebase/firestore/remote/datastore.h"
+#include "Firestore/core/src/firebase/firestore/model/snapshot_version.h"
+#include "Firestore/core/src/firebase/firestore/remote/grpc_connection.h"
+#include "Firestore/core/src/firebase/firestore/remote/remote_objc_bridge.h"
 #include "Firestore/core/src/firebase/firestore/remote/stream.h"
-#include "Firestore/core/src/firebase/firestore/remote/stream_objc_bridge.h"
 #include "Firestore/core/src/firebase/firestore/util/async_queue.h"
 #include "Firestore/core/src/firebase/firestore/util/status.h"
 #include "absl/strings/string_view.h"
@@ -37,9 +39,45 @@
 #import "Firestore/Source/Model/FSTMutation.h"
 #import "Firestore/Source/Remote/FSTSerializerBeta.h"
 
+@class FSTMutationResult;
+
 namespace firebase {
 namespace firestore {
 namespace remote {
+
+class WriteStreamCallback {
+ public:
+  /**
+   * Called by the `WriteStream` when it is ready to accept outbound request
+   * messages.
+   */
+  virtual void OnWriteStreamOpen() = 0;
+
+  /**
+   * Called by the `WriteStream` upon a successful handshake response from the
+   * server, which is the receiver's cue to send any pending writes.
+   */
+  virtual void OnWriteStreamHandshakeComplete() = 0;
+
+  /**
+   * Called by the `WriteStream` upon receiving a StreamingWriteResponse from
+   * the server that contains mutation results.
+   */
+  virtual void OnWriteStreamMutationResult(
+      model::SnapshotVersion commit_version,
+      std::vector<FSTMutationResult*> results) = 0;
+
+  /**
+   * Called when the `WriteStream`'s underlying RPC is interrupted for whatever
+   * reason, usually because of an error, but possibly due to an idle timeout.
+   * The status passed to this method may be "ok", in which case the stream was
+   * closed without attributable fault.
+   *
+   * NOTE: This will not be called after `Stop` is called on the stream. See
+   * "Starting and Stopping" on `Stream` for details.
+   */
+  virtual void OnWriteStreamClose(const util::Status& status) = 0;
+};
 
 /**
  * A Stream that implements the Write RPC.
@@ -55,14 +93,17 @@ namespace remote {
  * request is received, all pending mutations may be submitted. When
  * submitting multiple batches of mutations at the same time, it's
  * okay to use the same stream token for the calls to `WriteMutations`.
+ *
+ * This class is not intended as a base class; all virtual methods exist only
+ * for the sake of tests.
  */
 class WriteStream : public Stream {
  public:
   WriteStream(util::AsyncQueue* async_queue,
               auth::CredentialsProvider* credentials_provider,
               FSTSerializerBeta* serializer,
-              Datastore* datastore,
-              id<FSTWriteStreamDelegate> delegate);
+              GrpcConnection* grpc_connection,
+              WriteStreamCallback* callback);
 
   void SetLastStreamToken(NSData* token);
   /**
@@ -87,14 +128,20 @@ class WriteStream : public Stream {
    * Sends an initial stream token to the server, performing the handshake
    * required to make the StreamingWrite RPC work.
    */
-  void WriteHandshake();
+  virtual void WriteHandshake();
 
   /** Sends a group of mutations to the Firestore backend to apply. */
-  void WriteMutations(NSArray<FSTMutation*>* mutations);
+  virtual void WriteMutations(const std::vector<FSTMutation*>& mutations);
+
+ protected:
+  // For tests only
+  void SetHandshakeComplete(bool value = true) {
+    handshake_complete_ = value;
+  }
 
  private:
   std::unique_ptr<GrpcStream> CreateGrpcStream(
-      Datastore* datastore, const absl::string_view token) override;
+      GrpcConnection* grpc_connection, const auth::Token& token) override;
   void TearDown(GrpcStream* call) override;
 
   void NotifyStreamOpen() override;
@@ -106,7 +153,7 @@ class WriteStream : public Stream {
   }
 
   bridge::WriteStreamSerializer serializer_bridge_;
-  bridge::WriteStreamDelegate delegate_bridge_;
+  WriteStreamCallback* callback_ = nullptr;
   bool handshake_complete_ = false;
 };
 
