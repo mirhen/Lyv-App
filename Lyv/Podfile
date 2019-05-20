@@ -12,11 +12,13 @@ target 'Lyv' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Kingfisher', '~> 4.0'
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
   pod 'ARCL'
   pod 'Alamofire'
   pod 'Firebase/Firestore'
+  # Pods for FirebaseStarterApp
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
   
 
   target 'LyvTests' do

@@ -13,6 +13,10 @@ PODS:
     - FacebookCore (~> 0.7)
     - FBSDKCoreKit (~> 5.0)
     - FBSDKLoginKit (~> 5.0)
+  - FacebookShare (0.7.0):
+    - FacebookCore (~> 0.7)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKShareKit (~> 5.0)
   - FBSDKCoreKit (5.0.0):
     - FBSDKCoreKit/Basics (= 5.0.0)
     - FBSDKCoreKit/Core (= 5.0.0)
@@ -20,6 +24,8 @@ PODS:
   - FBSDKCoreKit/Core (5.0.0):
     - FBSDKCoreKit/Basics
   - FBSDKLoginKit (5.0.0):
+    - FBSDKCoreKit (= 5.0.0)
+  - FBSDKShareKit (5.0.0):
     - FBSDKCoreKit (= 5.0.0)
   - Firebase/Auth (6.0.0):
     - Firebase/CoreOnly
@@ -189,6 +195,7 @@ DEPENDENCIES:
   - ARCL
   - FacebookCore
   - FacebookLogin
+  - FacebookShare
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -204,8 +211,10 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - FacebookCore
     - FacebookLogin
+    - FacebookShare
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - FBSDKShareKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -235,8 +244,10 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   FacebookCore: 4eee98476cb37a485af5d337eb21f8cd5b3c7e6c
   FacebookLogin: 94cdad6850e86a2b04704dedfe7674a7af8148eb
+  FacebookShare: dd4954712db61e078aea483bdf89e1b2ae3574b5
   FBSDKCoreKit: ba361d4a9d4dc29ff218822b849b22d4f869c7bb
   FBSDKLoginKit: c6d0dc187bd076e370dffa10f7fc8a3562a6892c
+  FBSDKShareKit: edf3450bf82ce0c626b31943f370d3729082746d
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
   FirebaseAnalytics: 1743c5f4de3687d0745709dfdc4b1dea1484f44c
   FirebaseAuth: efc72b0f6fe075d2a6de8d81a6d9de83ef2b47eb
@@ -260,6 +271,6 @@ SPEC CHECKSUMS:
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
 
-PODFILE CHECKSUM: 81c3ebe3c7b113fa15118591a52a65e03fe283ca
+PODFILE CHECKSUM: 58608b0964770e871c4cda36610593c6f03afb08
 
 COCOAPODS: 1.5.3
