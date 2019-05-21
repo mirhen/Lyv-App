@@ -18,7 +18,6 @@ struct BeaconService {
         // 4
         let entryKey = Helper.randomAlphaNumericString(length: 28)
         let entryRef = Database.database().reference().child("beacons").child(entryKey)
-      
         //5
         entryRef.setValue(dict)
         print(dict)

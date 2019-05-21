@@ -20,7 +20,7 @@ class Beacon {
     var date: Date
     var distance: Int = 5
     var description: String = ""
-    var imageURL: String = ""
+    var imageData: Data = UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!
     var uid: String
     var key: String?
     var latitude: Float
@@ -35,16 +35,16 @@ class Beacon {
                 "description": description,
                 "latitude": latitude,
                 "longitude": longitude,
-                "imageURL": imageURL]
+                "imageData": imageData.base64EncodedString()]
     }
     
-    init(title: String, uid: String, date: Date, distance: Int, description: String, imageURL: String, latitude: Float, longitude: Float) {
+    init(title: String, uid: String, date: Date, distance: Int, description: String, imageData: Data, latitude: Float, longitude: Float) {
         self.date = date
         self.title = title
         self.uid = uid
         self.distance = distance
         self.description = description
-        self.imageURL = imageURL
+        self.imageData = imageData
         self.latitude = latitude
         self.longitude = longitude
     }
@@ -56,7 +56,7 @@ class Beacon {
             let uid = dict["uid"] as? String,
             let distance = dict["distance"] as? Int,
             let description = dict["description"] as? String,
-            let imageURL = dict["imageURL"] as? String,
+            let imageData = dict["imageData"] as? String,
             let latitude = dict["latitude"] as? Float,
             let longitude = dict["longitude"] as? Float
             
@@ -69,14 +69,15 @@ class Beacon {
         self.date = Date(timeIntervalSince1970: date)
         self.distance = distance
         self.description = description
-        self.imageURL = imageURL
+        self.imageData = Data(base64Encoded: imageData) ?? UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!
         self.latitude = latitude
         self.longitude = longitude
     }
     
-    func creatAnnotationNode() -> LocationAnnotationNode{
+    func creatAnnotationNode() -> LocationAnnotationNode {
+        
         let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 0)
-        let image = UIImage(named: "LocationPin")!
+        let image = UIImage(data: self.imageData)!
         let annotationNode = LocationAnnotationNode(location: location, image: image)
         annotationNode.annotationNode.name = self.title
         

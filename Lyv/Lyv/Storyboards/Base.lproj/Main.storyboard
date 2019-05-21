@@ -113,9 +113,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4U-3K-imV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                            </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-oP-vz1">
                                 <rect key="frame" x="154.5" y="739" width="105" height="44"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,17 +130,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="b2i-oP-vz1" firstAttribute="centerX" secondItem="XFP-Gd-Zet" secondAttribute="centerX" id="3hg-US-qAL"/>
-                            <constraint firstItem="e4U-3K-imV" firstAttribute="trailing" secondItem="6fp-vq-vnJ" secondAttribute="trailing" id="6w5-CR-4j7"/>
-                            <constraint firstItem="e4U-3K-imV" firstAttribute="bottom" secondItem="6fp-vq-vnJ" secondAttribute="bottom" id="RjG-Ci-jjf"/>
-                            <constraint firstItem="e4U-3K-imV" firstAttribute="leading" secondItem="6fp-vq-vnJ" secondAttribute="leading" id="Uwp-6h-Fmq"/>
                             <constraint firstItem="6fp-vq-vnJ" firstAttribute="bottom" secondItem="b2i-oP-vz1" secondAttribute="bottom" constant="30" id="Yf4-y2-7eJ"/>
-                            <constraint firstItem="e4U-3K-imV" firstAttribute="top" secondItem="XFP-Gd-Zet" secondAttribute="top" id="ivp-95-Rly"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6fp-vq-vnJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="fPu-60-ECr"/>
                     <connections>
-                        <outlet property="sceneView" destination="e4U-3K-imV" id="umB-Lg-Yoh"/>
+                        <outlet property="addBeaconButton" destination="b2i-oP-vz1" id="uU7-cW-te0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlL-fT-7RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,6 +251,6 @@
         <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EXg-B5-gMv"/>
+        <segue reference="3EQ-7X-eML"/>
     </inferredMetricsTieBreakers>
 </document>

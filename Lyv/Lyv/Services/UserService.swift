@@ -39,7 +39,6 @@ struct UserService {
         ref.setValue(userAttrs) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
-                
             }
             User.setCurrent(user, writeToUserDefaults: true)
         }
