@@ -8,8 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import Kingfisher
 
-class ProfileController: UIViewController {
+class ProfileController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //IBOutlets
     @IBOutlet weak var logoutButton: UIButton!
@@ -35,14 +36,14 @@ class ProfileController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.delegate = self
         setupUI()
         // Do any additional setup after loading the view.
         
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         UserService.getBeacons(for: User.current) { (beacons) in
             self.beacons = beacons
             
@@ -61,34 +62,32 @@ class ProfileController: UIViewController {
     }
     
     func setupUI() {
+        
+        
         self.usernameLabel.text = User.current.username
         
-//        let imageURL = URL(string: User.current.profileURL)
-//        self.profileImageView.kf.setImage(with: imageURL)
+        let imageURL = URL(string: User.current.profileURL)
+        self.profileImageView.kf.setImage(with: imageURL)
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
     }
 
 
-    
-}
-
-// MARK: - UITableViewDataSource
-
-extension ProfileController: UITableViewDataSource, UITableViewDelegate {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return beacons.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return beacons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconCell") as! BeaconCell
         
+        let beacon = beacons[indexPath.row]
+        
+        cell.beacon = beacon
         cell.setUpUI()
         
         return cell

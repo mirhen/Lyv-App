@@ -30,6 +30,7 @@ class Beacon {
         let date = self.date.timeIntervalSince1970
         return ["date" : date,
                 "title" : title,
+                "uid": uid,
                 "distance" : distance,
                 "description": description,
                 "latitude": latitude,
@@ -56,7 +57,7 @@ class Beacon {
             let distance = dict["distance"] as? Int,
             let description = dict["description"] as? String,
             let imageURL = dict["imageURL"] as? String,
-            let latitude = dict["latitide"] as? Float,
+            let latitude = dict["latitude"] as? Float,
             let longitude = dict["longitude"] as? Float
             
             else { return nil }

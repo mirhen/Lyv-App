@@ -69,6 +69,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M2S-ah-o4L" id="2sR-R7-PGj"/>
+                                    <outlet property="delegate" destination="M2S-ah-o4L" id="IMQ-Sm-bCr"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Beacons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfI-WX-0fw">
                                 <rect key="frame" x="20" y="428" width="129" height="21"/>
@@ -254,6 +258,6 @@
         <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3EQ-7X-eML"/>
+        <segue reference="EXg-B5-gMv"/>
     </inferredMetricsTieBreakers>
 </document>

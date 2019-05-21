@@ -79,9 +79,10 @@ struct UserService {
                 return completion([])
             }
             
-            let beacons = snapshot.reversed().compactMap(Beacon.init).filter {$0.uid != user.uid }
+            let beacons = snapshot.reversed().compactMap(Beacon.init).filter {$0.uid == user.uid }
 
             User.current.beacons = beacons.map{ $0.key! }
+            print(beacons.count)
             completion(beacons)
         })
     }
