@@ -54,6 +54,9 @@ class HomeController: UIViewController {
         // Set the scene to the view
         //        sceneView.scene = scene
         
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
         BeaconService.beacons { (beacons) in
             beacons.forEach {
                 let node = $0.creatAnnotationNode()
@@ -61,7 +64,6 @@ class HomeController: UIViewController {
             }
         }
     }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         sceneLocationView.frame = view.bounds
