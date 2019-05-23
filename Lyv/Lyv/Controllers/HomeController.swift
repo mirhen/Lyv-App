@@ -41,6 +41,7 @@ class HomeController: UIViewController {
         //        sceneView.delegate = self
         setupUI()
         
+        
         // Set up Location Manager
         setupLocationManager()
         
@@ -169,11 +170,7 @@ extension HomeController: CLLocationManagerDelegate {
     
     // Print out the location to the console
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("User Location: Latitude - ", location.coordinate.latitude, " Longitude - ", location.coordinate.longitude)
-            
-            
-        }
+        
     }
     
     // If we have been deined access give the user the option to change it

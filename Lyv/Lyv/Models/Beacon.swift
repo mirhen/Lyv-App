@@ -77,7 +77,7 @@ class Beacon {
     func creatAnnotationNode() -> LocationAnnotationNode {
         
         let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 0)
-        let image = UIImage(data: self.imageData)!
+        let image = UIImage(data: self.imageData, scale: 0.1)!//UIImage(data: self.imageData)! 
         let annotationNode = LocationAnnotationNode(location: location, image: image)
         annotationNode.annotationNode.name = self.title
         

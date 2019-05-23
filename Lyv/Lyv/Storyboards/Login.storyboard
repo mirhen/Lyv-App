@@ -68,7 +68,7 @@
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcZ-oG-vIp" userLabel="Separator Label">
-                                        <rect key="frame" x="180" y="647.5" width="54" height="21"/>
+                                        <rect key="frame" x="100" y="647.5" width="214" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -81,13 +81,13 @@
                                     <constraint firstItem="bAs-LB-d2x" firstAttribute="centerX" secondItem="hiF-Vu-Puh" secondAttribute="centerX" id="AmS-MZ-vLK"/>
                                     <constraint firstItem="dSk-eT-ybU" firstAttribute="top" secondItem="bAs-LB-d2x" secondAttribute="bottom" constant="45.5" id="M1F-cF-WgF"/>
                                     <constraint firstItem="qWt-zP-IJd" firstAttribute="centerX" secondItem="hiF-Vu-Puh" secondAttribute="centerX" id="MLO-s9-HGg"/>
-                                    <constraint firstItem="jcZ-oG-vIp" firstAttribute="leading" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="180" id="QEa-1W-2lr"/>
+                                    <constraint firstItem="jcZ-oG-vIp" firstAttribute="leading" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="100" id="QEa-1W-2lr"/>
                                     <constraint firstItem="jcZ-oG-vIp" firstAttribute="top" secondItem="xi0-tC-YHf" secondAttribute="bottom" constant="25" id="QvG-hj-AlS"/>
                                     <constraint firstItem="qWt-zP-IJd" firstAttribute="top" secondItem="hiF-Vu-Puh" secondAttribute="topMargin" multiplier="3" constant="-65" id="RbP-HW-IOa"/>
                                     <constraint firstItem="xi0-tC-YHf" firstAttribute="top" secondItem="dSk-eT-ybU" secondAttribute="bottom" constant="20" id="ZzC-tb-ABz"/>
                                     <constraint firstAttribute="trailing" secondItem="xi0-tC-YHf" secondAttribute="trailing" constant="50" id="bZg-lm-Idy"/>
                                     <constraint firstItem="HiF-3b-wDv" firstAttribute="top" secondItem="qWt-zP-IJd" secondAttribute="bottom" constant="40" id="dKz-ux-t33"/>
-                                    <constraint firstAttribute="trailing" secondItem="jcZ-oG-vIp" secondAttribute="trailing" constant="180" id="e5x-EF-Y5D"/>
+                                    <constraint firstAttribute="trailing" secondItem="jcZ-oG-vIp" secondAttribute="trailing" constant="100" id="e5x-EF-Y5D"/>
                                     <constraint firstItem="bAs-LB-d2x" firstAttribute="top" secondItem="HiF-3b-wDv" secondAttribute="bottom" constant="23" id="ffi-se-1Jm"/>
                                     <constraint firstItem="bAs-LB-d2x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="50" id="hfK-gt-AHM"/>
                                     <constraint firstItem="xi0-tC-YHf" firstAttribute="leading" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="50" id="m0h-eS-VnI"/>
@@ -121,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6b-TT-hxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="18"/>
+            <point key="canvasLocation" x="1000.0000000000001" y="17.410714285714285"/>
         </scene>
         <!--Sign Up Controller-->
         <scene sceneID="3Ry-vM-MvU">
