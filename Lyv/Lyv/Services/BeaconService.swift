@@ -32,6 +32,13 @@ struct BeaconService {
         entryRef.setValue(dict)
     }
     
+    static func removeBeacon(forBeacon beacon: Beacon) {
+        
+        let entryRef = Database.database().reference().child("beacons").child(beacon.key!)
+    
+        entryRef.removeValue()
+    }
+    
     static func beacons(completion: @escaping ([Beacon]) -> Void) {
         let ref = Database.database().reference().child("beacons")
         

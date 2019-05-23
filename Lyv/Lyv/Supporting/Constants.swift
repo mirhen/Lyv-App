@@ -13,6 +13,7 @@ struct Constants {
         static let toWelcomeUser = "toWelcomeUser"
         static let toJournalEntries = "toJournalEntries"
         static let toBeacon = "toBeacon"
+        static let toUpdate = "toUpdate"
     }
     struct UserDefaults {
         static let currentUser = "currentUser"

@@ -29,7 +29,7 @@ class SignUpController: UIViewController {
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var signUpButton: UIButton!
     
-    private let tintColor = UIColor(hexString: "#ff5a66")
+    private let tintColor = UIColor(hexString: "#DD54DF")
     private let backgroundColor: UIColor = .white
     private let textFieldColor = UIColor(hexString: "#B0B3C6")
     

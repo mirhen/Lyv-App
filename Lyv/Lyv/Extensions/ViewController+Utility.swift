@@ -37,8 +37,7 @@ extension Date {
 }
 
 extension UIButton {
-    func addBorder(_ radius: CGFloat = 6, color: UIColor = .black) {
-        self.layer.cornerRadius = radius
+    func addBorder(_ width: Int = 1, color: UIColor = .black) {
         self.layer.borderWidth = 1
         self.layer.borderColor = color.cgColor
     }

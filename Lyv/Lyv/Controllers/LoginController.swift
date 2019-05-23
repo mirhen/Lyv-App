@@ -26,7 +26,7 @@ class LoginController: UIViewController {
     @IBOutlet var backButton: UIButton!
     
     private let backgroundColor: UIColor = .white
-    private let tintColor = UIColor(hexString: "#ff5a66")
+    private let tintColor = UIColor(hexString: "#DD54DF")
     
     private let titleFont = UIFont.boldSystemFont(ofSize: 30)
     private let buttonFont = UIFont.boldSystemFont(ofSize: 20)

@@ -29,8 +29,10 @@
 		FA104DF6228E03AB00D1C48D /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF5228E03AB00D1C48D /* BeaconService.swift */; };
 		FA104DF8228E06A400D1C48D /* ViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF7228E06A400D1C48D /* ViewController+Utility.swift */; };
 		FA104DFA228E0C7200D1C48D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF9228E0C7200D1C48D /* ProfileController.swift */; };
-		FA104DFC228E32AD00D1C48D /* BeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DFB228E32AD00D1C48D /* BeaconCell.swift */; };
+		FA104DFC228E32AD00D1C48D /* OldBeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DFB228E32AD00D1C48D /* OldBeaconCell.swift */; };
 		FA104E00228E51A400D1C48D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DFF228E51A400D1C48D /* HomeController.swift */; };
+		FA72409C22954AAC00F2E352 /* BeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72409B22954AAC00F2E352 /* BeaconCell.swift */; };
+		FA9C85102296A57000A35B92 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C850F2296A57000A35B92 /* UpdateController.swift */; };
 		FAA75BB4229456A100A6EB92 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA75BB3229456A100A6EB92 /* LandingController.swift */; };
 		FAA75BB6229456E500A6EB92 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA75BB5229456E500A6EB92 /* Helper.swift */; };
 		FAA75BB82294573800A6EB92 /* ATCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA75BB72294573800A6EB92 /* ATCTextField.swift */; };
@@ -91,8 +93,10 @@
 		FA104DF5228E03AB00D1C48D /* BeaconService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
 		FA104DF7228E06A400D1C48D /* ViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Utility.swift"; sourceTree = "<group>"; };
 		FA104DF9228E0C7200D1C48D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		FA104DFB228E32AD00D1C48D /* BeaconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCell.swift; sourceTree = "<group>"; };
+		FA104DFB228E32AD00D1C48D /* OldBeaconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldBeaconCell.swift; sourceTree = "<group>"; };
 		FA104DFF228E51A400D1C48D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		FA72409B22954AAC00F2E352 /* BeaconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCell.swift; sourceTree = "<group>"; };
+		FA9C850F2296A57000A35B92 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		FAA75BB3229456A100A6EB92 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
 		FAA75BB5229456E500A6EB92 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		FAA75BB72294573800A6EB92 /* ATCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCTextField.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				FAA75BB3229456A100A6EB92 /* LandingController.swift */,
 				FAA75BB92294582B00A6EB92 /* SignUpController.swift */,
 				FAA75BBB2294599900A6EB92 /* LoginController.swift */,
+				FA9C850F2296A57000A35B92 /* UpdateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -284,7 +289,8 @@
 		FA104DE4228DDB4F00D1C48D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA104DFB228E32AD00D1C48D /* BeaconCell.swift */,
+				FA104DFB228E32AD00D1C48D /* OldBeaconCell.swift */,
+				FA72409B22954AAC00F2E352 /* BeaconCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -572,16 +578,18 @@
 				FAA75BBC2294599900A6EB92 /* LoginController.swift in Sources */,
 				FA104DF2228E003A00D1C48D /* UserService.swift in Sources */,
 				FAF2BA232293BD3B007CCE73 /* BeaconController.swift in Sources */,
+				FA72409C22954AAC00F2E352 /* BeaconCell.swift in Sources */,
 				FA104DEC228DEAF600D1C48D /* User.swift in Sources */,
 				FAA75BB82294573800A6EB92 /* ATCTextField.swift in Sources */,
 				FAA75BB4229456A100A6EB92 /* LandingController.swift in Sources */,
 				FA104E00228E51A400D1C48D /* HomeController.swift in Sources */,
 				FA104DF0228DF86C00D1C48D /* OldLoginController.swift in Sources */,
-				FA104DFC228E32AD00D1C48D /* BeaconCell.swift in Sources */,
+				FA104DFC228E32AD00D1C48D /* OldBeaconCell.swift in Sources */,
 				FAA75BB6229456E500A6EB92 /* Helper.swift in Sources */,
 				FA104DF8228E06A400D1C48D /* ViewController+Utility.swift in Sources */,
 				FA104DB2228DDACE00D1C48D /* ViewController.swift in Sources */,
 				FAA75BBA2294582B00A6EB92 /* SignUpController.swift in Sources */,
+				FA9C85102296A57000A35B92 /* UpdateController.swift in Sources */,
 				FA104DAE228DDACE00D1C48D /* AppDelegate.swift in Sources */,
 				FA104DF6228E03AB00D1C48D /* BeaconService.swift in Sources */,
 				FA104DFA228E0C7200D1C48D /* ProfileController.swift in Sources */,

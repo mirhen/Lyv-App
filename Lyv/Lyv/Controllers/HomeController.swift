@@ -11,12 +11,14 @@ import SceneKit
 //import ARKit
 import CoreLocation
 import ARCL
+import Kingfisher
 
 class HomeController: UIViewController {
 
     //IBOutlets
 //    @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var addBeaconButton: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
     
     //Properties
     var beacons: [Beacon] = []
@@ -37,6 +39,7 @@ class HomeController: UIViewController {
 
         // Set the view's delegate
         //        sceneView.delegate = self
+        setupUI()
         
         // Set up Location Manager
         setupLocationManager()
@@ -44,6 +47,10 @@ class HomeController: UIViewController {
         // Set up Core Location
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
+        
+        let beacon = Beacon(title: "Test", uid: "hi", date: Date(), distance: 5, description: "Hi", imageData: UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!, latitude: 31.779162185296208, longitude: 35.2)
+        let node = beacon.creatAnnotationNode()
+        self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
         
         // Show statistics such as fps and timing information
         //        sceneView.showsStatistics = true
@@ -69,10 +76,24 @@ class HomeController: UIViewController {
         sceneLocationView.frame = view.bounds
 
         view.bringSubviewToFront(addBeaconButton)
+        view.bringSubviewToFront(profileButton)
         
     }
     
-
+    func setupUI() {
+        addBeaconButton.configure(color: .white,
+                              font: UIFont.systemFont(ofSize: 20),
+                              cornerRadius: 55/2,
+                              backgroundColor: UIColor(hexString: "#DD54DF"))
+        
+        if User.current.profileURL != "?width=300&height=300" {
+            let imageURL = URL(string: User.current.profileURL)
+            profileButton.clipsToBounds = true
+            profileButton.kf.setImage(with: imageURL, for: .normal)
+        }
+        profileButton.addBorder(1, color: UIColor(hexString: "#DD54DF"))
+        profileButton.layer.cornerRadius = profileButton.frame.size.width / 2
+    }
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //

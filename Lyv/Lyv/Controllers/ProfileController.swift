@@ -10,13 +10,13 @@ import UIKit
 import FirebaseAuth
 import Kingfisher
 
-class ProfileController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfileController: UIViewController {
     
     //IBOutlets
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     //Properties
     var beacons = [Beacon]()
@@ -34,11 +34,17 @@ class ProfileController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     
     }
+    @IBAction func exitToProfile(segue: UIStoryboardSegue) { }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
         setupUI()
+        
+        let beacon = Beacon(title: "Test", uid: "hi", date: Date(), distance: 5, description: "Hi", imageData: UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!, latitude: 31.779162185296208, longitude: 35.2)
+        beacon.key = "key"
+        beacons.append(beacon)
+        beacons.append(beacon)
         // Do any additional setup after loading the view.
         
     }
@@ -47,13 +53,13 @@ class ProfileController: UIViewController, UITableViewDataSource, UITableViewDel
         UserService.getBeacons(for: User.current) { (beacons) in
             self.beacons = beacons
             
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.Segue.toBeacon {
-            if let destination = segue.destination as? BeaconController {
+        if segue.identifier == Constants.Segue.toUpdate {
+            if let destination = segue.destination as? UpdateController {
                 if let beacon = selectedBeacon {
                     destination.beacon = beacon
                 }
@@ -66,32 +72,70 @@ class ProfileController: UIViewController, UITableViewDataSource, UITableViewDel
         
         self.usernameLabel.text = User.current.username
         
-        let imageURL = URL(string: User.current.profileURL)
-        self.profileImageView.kf.setImage(with: imageURL)
+        if User.current.profileURL != "?width=300&height=300" {
+            let imageURL = URL(string: User.current.profileURL)
+            self.profileImageView.kf.setImage(with: imageURL)
+        }
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
     }
 
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return beacons.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconCell") as! BeaconCell
-        
-        let beacon = beacons[indexPath.row]
-        
-        cell.beacon = beacon
-        cell.setUpUI()
-        
-        return cell
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return beacons.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "OldBeaconCell") as! OldBeaconCell
+//
+//        let beacon = beacons[indexPath.row]
+//
+//        cell.beacon = beacon
+//        cell.setUpUI()
+//
+//        return cell
+//    }
 
 }
 
+extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return beacons.count
+    }
+    
+
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = collectionView.frame.width/3
+        let height = collectionView.frame.height/3
+        
+        return CGSize(width: width - 20, height: height - 5)
+
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeaconCell", for: indexPath) as! BeaconCell
+        
+        let beacon = beacons[indexPath.item]
+        cell.beacon = beacon
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let beacon = beacons[indexPath.row]
+        selectedBeacon = beacon
+        self.performSegue(withIdentifier: Constants.Segue.toUpdate, sender: self)
+    }
+    
+}

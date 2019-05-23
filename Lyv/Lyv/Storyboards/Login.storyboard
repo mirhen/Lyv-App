@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Quicksand_Book.otf">
-            <string>QuicksandBook-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Landing Controller-->
         <scene sceneID="oXp-Pr-8gK">
@@ -56,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi0-tC-YHf" userLabel="Sign Up Button">
-                                        <rect key="frame" x="50" y="570.5" width="314" height="55"/>
+                                        <rect key="frame" x="50" y="567.5" width="314" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="Lat-nK-DJg"/>
                                         </constraints>
@@ -65,23 +60,42 @@
                                             <segue destination="h9S-5i-zhi" kind="presentation" id="qQC-mQ-k5Y"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrR-Vp-BRM" userLabel="Facebook Button">
+                                        <rect key="frame" x="50" y="693.5" width="314" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="XTZ-pd-5ao"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcZ-oG-vIp" userLabel="Separator Label">
+                                        <rect key="frame" x="180" y="647.5" width="54" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="rrR-Vp-BRM" firstAttribute="top" secondItem="jcZ-oG-vIp" secondAttribute="bottom" constant="25" id="6FP-OE-sIc"/>
                                     <constraint firstAttribute="trailing" secondItem="dSk-eT-ybU" secondAttribute="trailing" constant="50" id="6Vb-It-rR8"/>
                                     <constraint firstItem="bAs-LB-d2x" firstAttribute="centerX" secondItem="hiF-Vu-Puh" secondAttribute="centerX" id="AmS-MZ-vLK"/>
                                     <constraint firstItem="dSk-eT-ybU" firstAttribute="top" secondItem="bAs-LB-d2x" secondAttribute="bottom" constant="45.5" id="M1F-cF-WgF"/>
                                     <constraint firstItem="qWt-zP-IJd" firstAttribute="centerX" secondItem="hiF-Vu-Puh" secondAttribute="centerX" id="MLO-s9-HGg"/>
+                                    <constraint firstItem="jcZ-oG-vIp" firstAttribute="leading" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="180" id="QEa-1W-2lr"/>
+                                    <constraint firstItem="jcZ-oG-vIp" firstAttribute="top" secondItem="xi0-tC-YHf" secondAttribute="bottom" constant="25" id="QvG-hj-AlS"/>
                                     <constraint firstItem="qWt-zP-IJd" firstAttribute="top" secondItem="hiF-Vu-Puh" secondAttribute="topMargin" multiplier="3" constant="-65" id="RbP-HW-IOa"/>
-                                    <constraint firstItem="xi0-tC-YHf" firstAttribute="top" secondItem="dSk-eT-ybU" secondAttribute="bottom" constant="23" id="ZzC-tb-ABz"/>
+                                    <constraint firstItem="xi0-tC-YHf" firstAttribute="top" secondItem="dSk-eT-ybU" secondAttribute="bottom" constant="20" id="ZzC-tb-ABz"/>
                                     <constraint firstAttribute="trailing" secondItem="xi0-tC-YHf" secondAttribute="trailing" constant="50" id="bZg-lm-Idy"/>
                                     <constraint firstItem="HiF-3b-wDv" firstAttribute="top" secondItem="qWt-zP-IJd" secondAttribute="bottom" constant="40" id="dKz-ux-t33"/>
+                                    <constraint firstAttribute="trailing" secondItem="jcZ-oG-vIp" secondAttribute="trailing" constant="180" id="e5x-EF-Y5D"/>
                                     <constraint firstItem="bAs-LB-d2x" firstAttribute="top" secondItem="HiF-3b-wDv" secondAttribute="bottom" constant="23" id="ffi-se-1Jm"/>
                                     <constraint firstItem="bAs-LB-d2x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="50" id="hfK-gt-AHM"/>
                                     <constraint firstItem="xi0-tC-YHf" firstAttribute="leading" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="50" id="m0h-eS-VnI"/>
+                                    <constraint firstItem="rrR-Vp-BRM" firstAttribute="leading" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="50" id="mMU-Ar-OZh"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bAs-LB-d2x" secondAttribute="trailing" constant="50" id="p2O-bS-ItR"/>
                                     <constraint firstItem="HiF-3b-wDv" firstAttribute="centerX" secondItem="hiF-Vu-Puh" secondAttribute="centerX" id="pDV-uo-Boe"/>
                                     <constraint firstItem="dSk-eT-ybU" firstAttribute="leading" secondItem="hiF-Vu-Puh" secondAttribute="leading" constant="50" id="rgI-mS-O7J"/>
+                                    <constraint firstAttribute="trailing" secondItem="rrR-Vp-BRM" secondAttribute="trailing" constant="50" id="znU-ty-7Ml"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -96,8 +110,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="mLX-kt-kLy"/>
                     <connections>
+                        <outlet property="facebookButton" destination="rrR-Vp-BRM" id="UfT-je-4rZ"/>
                         <outlet property="loginButton" destination="dSk-eT-ybU" id="VMj-JU-7oD"/>
                         <outlet property="logoImageView" destination="qWt-zP-IJd" id="dg1-SY-iwB"/>
+                        <outlet property="separatorLabel" destination="jcZ-oG-vIp" id="Glc-ID-ST9"/>
                         <outlet property="signUpButton" destination="xi0-tC-YHf" id="sLk-lk-pOx"/>
                         <outlet property="subtitleLabel" destination="bAs-LB-d2x" id="Khu-yf-K2U"/>
                         <outlet property="titleLabel" destination="HiF-3b-wDv" id="LLB-FU-QqF"/>
@@ -261,65 +277,6 @@
                 <exit id="Oss-7W-PRo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1857" y="-260"/>
-        </scene>
-        <!--Old Login Controller-->
-        <scene sceneID="Awc-0L-FUM">
-            <objects>
-                <viewController id="KMd-pH-hPa" customClass="OldLoginController" customModule="Lyv" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bth-FF-aqm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lyv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-14-AWx">
-                                <rect key="frame" x="186" y="150" width="26" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9I-Ij-h5e">
-                                <rect key="frame" x="142" y="418" width="130" height="60"/>
-                                <color key="backgroundColor" red="0.98820984359999997" green="0.98443007469999999" blue="0.97647309299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="b8a-FC-rUO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="QuicksandBook-Regular" family="Quicksand" pointSize="17"/>
-                                <state key="normal" title="Register or log in">
-                                    <color key="titleColor" red="0.58390480280000001" green="0.320109427" blue="0.613871634" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="KMd-pH-hPa" eventType="touchUpInside" id="L9C-60-zcp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjc-Dp-KDi">
-                                <rect key="frame" x="127.5" y="493" width="159" height="60"/>
-                                <color key="backgroundColor" red="0.98820984359999997" green="0.98443007469999999" blue="0.97647309299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="J40-ET-Rjq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="QuicksandBook-Regular" family="Quicksand" pointSize="17"/>
-                                <state key="normal" title="Login with Facebook">
-                                    <color key="titleColor" red="0.58390480280000001" green="0.320109427" blue="0.613871634" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="facebookLoginWithSender:" destination="KMd-pH-hPa" eventType="touchUpInside" id="Guq-u1-8bm"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="V9I-Ij-h5e" firstAttribute="centerY" secondItem="Bth-FF-aqm" secondAttribute="centerY" id="HBI-yJ-Fp7"/>
-                            <constraint firstItem="Tjc-Dp-KDi" firstAttribute="top" secondItem="V9I-Ij-h5e" secondAttribute="bottom" constant="15" id="R4R-g2-f6f"/>
-                            <constraint firstItem="V9I-Ij-h5e" firstAttribute="centerX" secondItem="Bth-FF-aqm" secondAttribute="centerX" id="XNv-ez-38n"/>
-                            <constraint firstItem="Tjc-Dp-KDi" firstAttribute="centerX" secondItem="Bth-FF-aqm" secondAttribute="centerX" id="vrI-6c-2gU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="o39-Oy-ZiB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="oCO-8g-Azo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GEd-9T-0M9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1001" y="648"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="OKL-vg-9Pf">
