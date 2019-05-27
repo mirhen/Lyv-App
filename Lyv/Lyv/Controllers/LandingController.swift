@@ -34,6 +34,7 @@ class LandingController: UIViewController {
     private let subtitleFont = UIFont.boldSystemFont(ofSize: 18)
     private let buttonFont = UIFont.boldSystemFont(ofSize: 24)
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

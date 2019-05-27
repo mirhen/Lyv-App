@@ -36,6 +36,10 @@ class ProfileController: UIViewController {
     }
     @IBAction func exitToProfile(segue: UIStoryboardSegue) { }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        print(#function)
+    
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

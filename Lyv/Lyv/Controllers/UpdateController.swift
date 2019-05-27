@@ -52,6 +52,8 @@ class UpdateController: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
+        print(#function)
+        performSegue(withIdentifier: "exitToProfile", sender: self)
     }
     @IBAction func removeButtonPressed(_ sender: Any) {
         if let beacon = beacon {
@@ -151,8 +153,7 @@ extension UpdateController: CLLocationManagerDelegate {
     // Print out the location to the console
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            print("User Location: Latitude - ", location.coordinate.latitude, " Longitude - ", location.coordinate.longitude)
-            
+       
             self.coordinate = location.coordinate
         }
     }

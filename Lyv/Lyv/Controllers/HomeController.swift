@@ -49,9 +49,9 @@ class HomeController: UIViewController {
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
         
-        let beacon = Beacon(title: "Test", uid: "hi", date: Date(), distance: 5, description: "Hi", imageData: UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!, latitude: 31.779162185296208, longitude: 35.2)
-        let node = beacon.creatAnnotationNode()
-        self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+//        let beacon = Beacon(title: "Test", uid: "hi", date: Date(), distance: 5, description: "Hi", imageData: UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!, latitude: 31.779162185296208, longitude: 35.2)
+//        let node = beacon.creatAnnotationNode()
+//        self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
         
         // Show statistics such as fps and timing information
         //        sceneView.showsStatistics = true
@@ -68,6 +68,7 @@ class HomeController: UIViewController {
         BeaconService.beacons { (beacons) in
             beacons.forEach {
                 let node = $0.creatAnnotationNode()
+                
                 self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
             }
         }
