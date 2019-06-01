@@ -11,8 +11,7 @@ import UIKit
 class BeaconCell: UICollectionViewCell {
     
     //IBOutlets
-    @IBOutlet weak var beaconImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var beaconView: BeaconView!
     
     //Variables
     var beacon: Beacon? {
@@ -22,15 +21,14 @@ class BeaconCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
-        beaconImageView.layer.cornerRadius = beaconImageView.frame.size.width / 2
-        beaconImageView.clipsToBounds = true
+        
     }
     
     func setUpUI() {
         
         if let beacon = beacon {
-            titleLabel.text = beacon.title
-            beaconImageView.image = UIImage(data: beacon.imageData)
+            beaconView.imageView.image = UIImage(data: beacon.imageData)
+            beaconView.titleLable.text = beacon.title
         }
         
     }

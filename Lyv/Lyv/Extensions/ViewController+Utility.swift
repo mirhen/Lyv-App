@@ -36,14 +36,16 @@ extension Date {
     }
 }
 
-extension UIButton {
-    func addBorder(_ width: Int = 1, color: UIColor = .black) {
-        self.layer.borderWidth = 1
+extension UIView {
+    func addBorder(_ width: CGFloat = 1, color: UIColor = .black) {
+        self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
 }
 
-struct StanfordColors {
+struct LyvColors {
+    static let lightpink = UIColor.init(hexString: "E0BAD8")
+    static let darkpurple = UIColor.init(hexString: "93298D")
     static let darkred = UIColor.init(red: 177/255, green: 6/255, blue: 14/255, alpha: 1)
     static let beige = UIColor.init(red: 179/255, green: 153/255, blue: 93/255, alpha: 1)
 }

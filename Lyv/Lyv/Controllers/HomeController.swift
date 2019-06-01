@@ -86,14 +86,14 @@ class HomeController: UIViewController {
         addBeaconButton.configure(color: .white,
                               font: UIFont.systemFont(ofSize: 20),
                               cornerRadius: 55/2,
-                              backgroundColor: UIColor(hexString: "#DD54DF"))
+                              backgroundColor: LyvColors.darkpurple)
         
         if User.current.profileURL != "?width=300&height=300" {
             let imageURL = URL(string: User.current.profileURL)
             profileButton.clipsToBounds = true
             profileButton.kf.setImage(with: imageURL, for: .normal)
         }
-        profileButton.addBorder(1, color: UIColor(hexString: "#DD54DF"))
+        profileButton.addBorder(1, color: LyvColors.lightpink)
         profileButton.layer.cornerRadius = profileButton.frame.size.width / 2
     }
 //    override func viewWillAppear(_ animated: Bool) {

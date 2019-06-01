@@ -14,7 +14,13 @@ class UpdateController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var distanceSlider: UISlider!
     @IBOutlet weak var descriptionTextField: UITextField!
-    @IBOutlet weak var imageButton: UIButton!
+    @IBOutlet weak var imageButton: UIButton! {
+        didSet {
+            if imageButton.imageView != nil {
+                imageButton.imageView!.layer.cornerRadius = imageButton.frame.width/2
+            }
+        }
+    }
     @IBOutlet weak var launchButton: UIButton!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var removeButton: UIButton!
@@ -26,7 +32,7 @@ class UpdateController: UIViewController {
     var coordinate = CLLocationCoordinate2D()
     private let tintColor = UIColor(hexString: "#DD54DF")
     private let backgroundColor: UIColor = .white
-    private let textFieldColor = UIColor(hexString: "#B0B3C6")
+    private let textFieldColor: UIColor = .black
     private let textFieldBorderColor = UIColor(hexString: "#B0B3C6")
     private let titleFont = UIFont.boldSystemFont(ofSize: 30)
     private let textFieldFont = UIFont.init(name: "Avenir-Book", size: 15) ?? UIFont.systemFont(ofSize: 16)
@@ -38,11 +44,12 @@ class UpdateController: UIViewController {
     
     @IBAction func imageButtonPressed(_ sender: Any) {
         ImagePickerManager().pickImage(self){ image in
-            print(image.size)
             //here is the image
             
             self.imageButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
             self.imageButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .highlighted)
+            
+            
             
         }
     }
@@ -115,7 +122,13 @@ class UpdateController: UIViewController {
         launchButton.configure(color: backgroundColor,
                                font: buttonFont,
                                cornerRadius: 40/2,
-                               backgroundColor: UIColor(hexString: "#DD54DF"))
+                               backgroundColor: LyvColors.darkpurple)
+        
+        removeButton.configure(color: LyvColors.darkpurple,
+                               font: buttonFont,
+                               cornerRadius: 25,
+                               backgroundColor: .white)
+        removeButton.addBorder(1, color: LyvColors.darkpurple)
         
         nameTextField.configure(color: textFieldColor,
                                 font: textFieldFont,
@@ -133,8 +146,11 @@ class UpdateController: UIViewController {
                                        borderWidth: 1.0)
         descriptionTextField.clipsToBounds = true
         
-        imageButton.addBorder(1, color: UIColor(hexString: "#DD54DF"))
+        imageButton.addBorder(2, color: LyvColors.darkpurple)
         imageButton.layer.cornerRadius = imageButton.frame.size.width / 2
+        imageButton.imageView!.clipsToBounds = true
+        
+        
     }
 }
 

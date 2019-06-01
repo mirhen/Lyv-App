@@ -76,15 +76,18 @@ class Beacon {
     
     func creatAnnotationNode() -> LocationAnnotationNode {
         
-        let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 0)
+        let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 200)
         let image = UIImage(data: self.imageData)!//UIImage(data: self.imageData)!
         
-        let view = UIView(frame: CGRect(origin: CGPoint.init(), size: CGSize(width: 100, height: 100)))
-        view.backgroundColor = .blue
-        let imageView = UIImageView(frame: view.bounds)
-        imageView.image = image
-        view.layer.cornerRadius = 50
-        view.addSubview(imageView)
+        let frame = CGRect(origin: CGPoint.init(), size: CGSize(width: 125, height: 160))
+        
+        //Instantiate Beacon View
+        let view = BeaconView(frame: frame)
+        view.imageView.image = image
+        view.titleLable.text = self.title
+        view.backgroundColor = .clear
+        view.isOpaque = false
+        
         
         
         let annotationNode = LocationAnnotationNode(location: location, view: view)

@@ -17,13 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.86666666670000003" green="0.3294117647" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lyv Logo" translatesAutoresizingMaskIntoConstraints="NO" id="T5o-O0-GRv">
+                                <rect key="frame" x="72" y="370.5" width="290" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="TTC-I6-CeN"/>
+                                    <constraint firstAttribute="width" constant="290" id="Z5C-u5-olS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T5o-O0-GRv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="NFj-kj-YkC"/>
+                            <constraint firstItem="T5o-O0-GRv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="10" id="oJ2-rk-qEs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lyv Logo" width="1241" height="693"/>
+    </resources>
 </document>

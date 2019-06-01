@@ -44,11 +44,6 @@ class ProfileController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
-        let beacon = Beacon(title: "Test", uid: "hi", date: Date(), distance: 5, description: "Hi", imageData: UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!, latitude: 31.779162185296208, longitude: 35.2)
-        beacon.key = "key"
-        beacons.append(beacon)
-        beacons.append(beacon)
         // Do any additional setup after loading the view.
         
     }
@@ -83,27 +78,6 @@ class ProfileController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
     }
-
-
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return beacons.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "OldBeaconCell") as! OldBeaconCell
-//
-//        let beacon = beacons[indexPath.row]
-//
-//        cell.beacon = beacon
-//        cell.setUpUI()
-//
-//        return cell
-//    }
 
 }
 

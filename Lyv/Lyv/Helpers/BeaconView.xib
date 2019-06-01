@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeaconView" customModule="Lyv" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="6o7-0z-e2l" id="drl-fC-vbk"/>
+                <outlet property="titleLable" destination="tjE-ni-Tjq" id="SIi-xd-nxs"/>
+                <outlet property="titleView" destination="EpB-ii-QVh" id="5yC-Ue-1d5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="158"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="6o7-0z-e2l">
+                    <rect key="frame" x="5" y="34" width="115" height="119"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-ii-QVh">
+                    <rect key="frame" x="5" y="0.0" width="115" height="30"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Josh Zayner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjE-ni-Tjq">
+                            <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.72941176470000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="9Sk-kM-hTg"/>
+                        <constraint firstItem="tjE-ni-Tjq" firstAttribute="top" secondItem="EpB-ii-QVh" secondAttribute="top" id="BTr-Ug-9MX"/>
+                        <constraint firstItem="tjE-ni-Tjq" firstAttribute="leading" secondItem="EpB-ii-QVh" secondAttribute="leading" id="GYg-wf-cAG"/>
+                        <constraint firstAttribute="bottom" secondItem="tjE-ni-Tjq" secondAttribute="bottom" id="p13-iC-YVA"/>
+                        <constraint firstAttribute="trailing" secondItem="tjE-ni-Tjq" secondAttribute="trailing" id="pfs-wL-Ox6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6o7-0z-e2l" secondAttribute="bottom" constant="5" id="5OV-YC-8Iq"/>
+                <constraint firstItem="EpB-ii-QVh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="8xI-ok-KEj"/>
+                <constraint firstAttribute="trailing" secondItem="EpB-ii-QVh" secondAttribute="trailing" constant="5" id="K30-PF-m6T"/>
+                <constraint firstItem="6o7-0z-e2l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="PKD-hC-Wow"/>
+                <constraint firstItem="6o7-0z-e2l" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-5" id="eGr-2x-40X"/>
+                <constraint firstItem="EpB-ii-QVh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jUo-4w-13S"/>
+                <constraint firstItem="6o7-0z-e2l" firstAttribute="top" secondItem="EpB-ii-QVh" secondAttribute="bottom" constant="4" id="kPK-lf-khM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="102.17391304347827" y="34.821428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="user" width="512" height="512"/>
+    </resources>
+</document>
