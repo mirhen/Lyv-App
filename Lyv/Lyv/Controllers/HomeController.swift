@@ -13,26 +13,44 @@ import CoreLocation
 import ARCL
 import Kingfisher
 
+var currentLocation = CLLocation(coordinate: CLLocationCoordinate2D(), altitude: 0)
+
 class HomeController: UIViewController {
 
     //IBOutlets
 //    @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var addBeaconButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var frameSwitch: UISwitch!
     
     //Properties
     var beacons: [Beacon] = []
+    var selectedBeacon: Beacon?
     var sceneLocationView = SceneLocationView()
-    
+    var nodes: [LocationAnnotationNode] = []
     //Location Property
     let locationManager = CLLocationManager()
+    var coordinate = CLLocationCoordinate2D()
     
     @IBAction func addButtonPressed(_ sender: Any) {
     }
     
+    @IBAction func profileButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toProfileController", sender: self)
+    }
     @IBAction func exitToHome(segue: UIStoryboardSegue) { }
     
-    
+    @objc func switchPressed(switchState: UISwitch) {
+        
+        self.sceneLocationView.removeAllNodes()
+        beacons.forEach {
+            let node = $0.creatAnnotationNode(withLine: frameSwitch.isOn, currentLocation: CLLocation(coordinate: coordinate, altitude: 0))
+            
+            self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+            
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,33 +63,40 @@ class HomeController: UIViewController {
         // Set up Location Manager
         setupLocationManager()
         
-        // Set up Core Location
-        sceneLocationView.run()
-        view.addSubview(sceneLocationView)
-        
 //        let beacon = Beacon(title: "Test", uid: "hi", date: Date(), distance: 5, description: "Hi", imageData: UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!, latitude: 31.779162185296208, longitude: 35.2)
 //        let node = beacon.creatAnnotationNode()
 //        self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
         
-        // Show statistics such as fps and timing information
-        //        sceneView.showsStatistics = true
-        
-        // Create a new scene
-        //        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        //        sceneView.scene = scene
-        
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+       
+    }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set up Core Location
+        sceneLocationView.run()
+        view.addSubview(sceneLocationView)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         BeaconService.beacons { (beacons) in
+            self.beacons = beacons
             beacons.forEach {
-                let node = $0.creatAnnotationNode()
+                let node = $0.creatAnnotationNode(currentLocation: CLLocation(coordinate: self.coordinate, altitude: 0))
                 
                 self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+                
             }
         }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        sceneLocationView.pause()
+//        sceneLocationView.removeFromSuperview()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -79,10 +104,24 @@ class HomeController: UIViewController {
 
         view.bringSubviewToFront(addBeaconButton)
         view.bringSubviewToFront(profileButton)
+        view.bringSubviewToFront(frameSwitch)
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsController" {
+            let destination = segue.destination as! DetailsController
+            if let beacon = selectedBeacon {
+                destination.beacon = beacon
+            }
+        } else if segue.identifier == "toProfileController" {
+            let destination = segue.destination as! ProfileController
+            destination.beacons = beacons.filter {$0.uid == User.current.uid }
+        }
+    }
+    
     func setupUI() {
+        
         addBeaconButton.configure(color: .white,
                               font: UIFont.systemFont(ofSize: 20),
                               cornerRadius: 55/2,
@@ -95,49 +134,10 @@ class HomeController: UIViewController {
         }
         profileButton.addBorder(1, color: LyvColors.lightpink)
         profileButton.layer.cornerRadius = profileButton.frame.size.width / 2
+        
+        frameSwitch.addTarget(self, action: #selector(switchPressed), for: .valueChanged)
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        // Create a session configuration
-//        let configuration = ARWorldTrackingConfiguration()
-//
-//        // Run the view's session
-//        sceneView.session.run(configuration)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//
-//        // Pause the view's session
-//        sceneView.session.pause()
-//    }
-    
-    // MARK: - ARSCNViewDelegate
-    
-    /*
-     // Override to create and configure nodes for anchors added to the view's session.
-     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-     let node = SCNNode()
-     
-     return node
-     }
-     */
-    
-//    func session(_ session: ARSession, didFailWithError error: Error) {
-//        // Present an error message to the user
-//
-//    }
-//
-//    func sessionWasInterrupted(_ session: ARSession) {
-//        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-//
-//    }
-//
-//    func sessionInterruptionEnded(_ session: ARSession) {
-//        // Reset tracking and/or remove existing anchors if consistent tracking is required
-//
-//    }
+
     
     
     // Touch events on nodes
@@ -150,6 +150,15 @@ class HomeController: UIViewController {
                 
                 print("HIT:-> Name: \(result.node.description)")
                 print("HIT:-> description  \(result.node.name)")
+//                result.node.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+                
+                beacons.forEach {
+                    if result.node.name! == $0.title {
+                        self.selectedBeacon = $0
+                        performSegue(withIdentifier: "toDetailsController", sender: self)
+                        return
+                    }
+                }
                 
             }
         }
@@ -171,7 +180,11 @@ extension HomeController: CLLocationManagerDelegate {
     
     // Print out the location to the console
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        if let location = locations.first {
+            
+            currentLocation = location
+            self.coordinate = location.coordinate
+        }
     }
     
     // If we have been deined access give the user the option to change it

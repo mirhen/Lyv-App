@@ -29,15 +29,15 @@ class SignUpController: UIViewController {
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var signUpButton: UIButton!
     
-    private let tintColor = UIColor(hexString: "#DD54DF")
+    private let tintColor = LyvColors.darkpurple
     private let backgroundColor: UIColor = .white
     private let textFieldColor = UIColor(hexString: "#B0B3C6")
     
     private let textFieldBorderColor = UIColor(hexString: "#B0B3C6")
     
-    private let titleFont = UIFont.boldSystemFont(ofSize: 30)
-    private let textFieldFont = UIFont.systemFont(ofSize: 16)
-    private let buttonFont = UIFont.boldSystemFont(ofSize: 20)
+    private let titleFont = UIFont.init(name: "Avenir-Black", size: 35) ?? UIFont.boldSystemFont(ofSize: 35)
+    private let textFieldFont = UIFont.init(name: "Avenir-Roman", size: 18) ?? UIFont.boldSystemFont(ofSize: 18)
+    private let buttonFont = UIFont.init(name: "Avenir-Heavy", size: 24) ?? UIFont.boldSystemFont(ofSize: 24)
     
     override func viewDidLoad() {
         super.viewDidLoad()

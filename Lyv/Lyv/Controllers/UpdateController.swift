@@ -58,10 +58,7 @@ class UpdateController: UIViewController {
         updateBeacon()
     }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        print(#function)
-        performSegue(withIdentifier: "exitToProfile", sender: self)
-    }
+  
     @IBAction func removeButtonPressed(_ sender: Any) {
         if let beacon = beacon {
             BeaconService.removeBeacon(forBeacon: beacon)
@@ -137,6 +134,7 @@ class UpdateController: UIViewController {
                                 backgroundColor: backgroundColor,
                                 borderWidth: 1.0)
         nameTextField.clipsToBounds = true
+        nameTextField.autocorrectionType = .no
         
         descriptionTextField.configure(color: textFieldColor,
                                        font: textFieldFont,
@@ -145,6 +143,7 @@ class UpdateController: UIViewController {
                                        backgroundColor: backgroundColor,
                                        borderWidth: 1.0)
         descriptionTextField.clipsToBounds = true
+        descriptionTextField.autocorrectionType = .no
         
         imageButton.addBorder(2, color: LyvColors.darkpurple)
         imageButton.layer.cornerRadius = imageButton.frame.size.width / 2

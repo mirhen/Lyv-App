@@ -36,12 +36,7 @@ extension Date {
     }
 }
 
-extension UIView {
-    func addBorder(_ width: CGFloat = 1, color: UIColor = .black) {
-        self.layer.borderWidth = width
-        self.layer.borderColor = color.cgColor
-    }
-}
+
 
 struct LyvColors {
     static let lightpink = UIColor.init(hexString: "E0BAD8")
@@ -156,4 +151,34 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     @objc func imagePickerController(_ picker: UIImagePickerController, pickedImage: UIImage?) {
     }
     
+}
+
+extension UIView {
+    
+    // Using a function since `var image` might conflict with an existing variable
+    // (like on `UIImageView`)
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
+    }
+
+    func addBorder(_ width: CGFloat = 1, color: UIColor = .black) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+    }
+}
+
+extension UIImageView {
+    public func maskCircle() {
+        self.contentMode = UIView.ContentMode.scaleAspectFill
+        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.masksToBounds = false
+        self.clipsToBounds = true
+        
+        // make square(* must to make circle),
+        // resize(reduce the kilobyte) and
+        // fix rotation.
+    }
 }

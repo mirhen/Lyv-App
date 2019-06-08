@@ -74,26 +74,75 @@ class Beacon {
         self.longitude = longitude
     }
     
-    func creatAnnotationNode() -> LocationAnnotationNode {
+    func creatAnnotationNode(withLine: Bool = false, currentLocation: CLLocation) -> LocationAnnotationNode {
         
-        let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 200)
+        let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 100)
+        print(self.title, location)
         let image = UIImage(data: self.imageData)!//UIImage(data: self.imageData)!
         
-        let frame = CGRect(origin: CGPoint.init(), size: CGSize(width: 125, height: 160))
+        let distance = currentLocation.distance(from: CLLocation(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude))) / 1609.344
         
+        let size = setSizeFrom(CGFloat(distance))
+        let frame = CGRect(origin: CGPoint.init(), size: CGSize(width: 125, height: 300))// setViewFrame(distance: CGFloat(distance))
+        print(self.title, frame)
         //Instantiate Beacon View
         let view = BeaconView(frame: frame)
         view.imageView.image = image
+        view.imageView.layer.cornerRadius = view.imageView.frame.height/2
         view.titleLable.text = self.title
         view.backgroundColor = .clear
         view.isOpaque = false
         
+        if !withLine {
+            view.longFrameImageView.isHidden = true
+        }
         
-        
-        let annotationNode = LocationAnnotationNode(location: location, view: view)
+        let annotationNode = LocationAnnotationNode(location: location, image: view.asImage().resizeImage(targetSize: size))
         annotationNode.annotationNode.name = self.title
         
         return annotationNode
 
     }
+    
+
+    //Helper Functions
+    
+    func setSizeFrom(_ distance: CGFloat) -> CGSize {
+        
+        let maxDistance: CGFloat = 1
+        
+        let maxSize = CGSize(width: 187.5, height: 450)
+        let minSize = CGSize(width: 62.5, height: 150)
+        
+        
+        let distancePercentage = (distance / maxDistance)
+        let widthPerc = (maxSize.width - minSize.width)
+        let heightPerc = (maxSize.height - minSize.height)
+        
+        let width = distancePercentage * widthPerc
+        let height = distancePercentage *  heightPerc
+        
+        var size = CGSize(width:  maxSize.width - width, height: maxSize.height - height)
+        
+        if size.height > maxSize.height {
+            size = maxSize
+        } else if size.height < minSize.height {
+            size = minSize
+        }
+        
+        
+        return size
+    }
+    
+    func getDistance() -> Double {
+        
+        let distance = currentLocation.distance(from: CLLocation(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude))) / 1609.344
+        let rounded = Double(String(format:"%.2f", distance))!
+        
+        return rounded
+    }
+
+
+    
+    
 }

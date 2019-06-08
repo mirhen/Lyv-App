@@ -17,10 +17,21 @@ class ProfileController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var currentButton: UIButton!
+    @IBOutlet weak var pescribedButton: UIButton!
+    @IBOutlet weak var wellnessButton: UIButton!
+    @IBOutlet weak var wellnessView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     
     //Properties
     var beacons = [Beacon]()
     var selectedBeacon: Beacon?
+    var pescribedData = [
+        ["image" : "exercise", "descript": "4 Exercise Activites"],
+        ["image" : "healthy", "descript": "3 Healthy Meals"],
+        ["image" : "social", "descript": "1 Social Outing"],
+        ["image" : "journal", "descript": "7 Journal Entries"]
+    ]
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
@@ -35,11 +46,31 @@ class ProfileController: UIViewController {
     
     }
     @IBAction func exitToProfile(segue: UIStoryboardSegue) { }
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        print(#function)
-    
+    @IBAction func currentPressed(_ sender: Any) {
+        pescribedButton.setTitleColor(.lightGray, for: .normal)
+        wellnessButton.setTitleColor(.lightGray, for: .normal)
+        currentButton.setTitleColor(.black, for: .normal)
+        wellnessView.isHidden = true
+        collectionView.isHidden = false
+        tableView.isHidden = true
     }
+    @IBAction func pescribedPressed(_ sender: Any) {
+        currentButton.setTitleColor(.lightGray, for: .normal)
+        wellnessButton.setTitleColor(.lightGray, for: .normal)
+        pescribedButton.setTitleColor(.black, for: .normal)
+        wellnessView.isHidden = false
+        tableView.isHidden = false
+        collectionView.isHidden = true
+    }
+    @IBAction func wellnessPressed(_ sender: Any) {
+        pescribedButton.setTitleColor(.lightGray, for: .normal)
+        currentButton.setTitleColor(.lightGray, for: .normal)
+        wellnessButton.setTitleColor(.black, for: .normal)
+        wellnessView.isHidden = false
+        tableView.isHidden = true
+        collectionView.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,10 +80,13 @@ class ProfileController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if beacons.count == 0 {
         UserService.getBeacons(for: User.current) { (beacons) in
             self.beacons = beacons
             
             self.collectionView.reloadData()
+        }
         }
     }
     
@@ -77,6 +111,11 @@ class ProfileController: UIViewController {
         }
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
+        
+        pescribedButton.setTitleColor(.lightGray, for: .normal)
+        wellnessButton.setTitleColor(.lightGray, for: .normal)
+        wellnessView.isHidden = true
+        tableView.isHidden = true
     }
 
 }
@@ -116,4 +155,29 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
         self.performSegue(withIdentifier: Constants.Segue.toUpdate, sender: self)
     }
     
+}
+
+
+extension ProfileController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pescribedData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PescribeCell", for: indexPath) as! PescribeCell
+        
+        let cellData = pescribedData[indexPath.row]
+        
+        cell.iconImageView.image = UIImage(named: cellData["image"]!)
+        cell.descriptLabel.text! = cellData["descript"]!
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 93
+    }
 }

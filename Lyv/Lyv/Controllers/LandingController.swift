@@ -23,23 +23,23 @@ class LandingController: UIViewController {
     @IBOutlet var facebookButton: UIButton!
     
     private let backgroundColor: UIColor = .white
-    private let tintColor = UIColor(hexString: "#DD54DF")
+    private let tintColor = LyvColors.darkpurple
     private let subtitleColor = UIColor(hexString: "#464646")
     private let signUpButtonColor = UIColor(hexString: "#414665")
     private let signUpButtonBorderColor = UIColor(hexString: "#B0B3C6")
     private let separatorFont = UIFont.boldSystemFont(ofSize: 14)
     private let separatorTextColor = UIColor(hexString: "#464646")
     
-    private let titleFont = UIFont.boldSystemFont(ofSize: 30)
-    private let subtitleFont = UIFont.boldSystemFont(ofSize: 18)
-    private let buttonFont = UIFont.boldSystemFont(ofSize: 24)
+    private let titleFont = UIFont.init(name: "Avenir-Black", size: 35) ?? UIFont.boldSystemFont(ofSize: 35)
+    private let subtitleFont = UIFont.init(name: "Avenir-Heavy", size: 18) ?? UIFont.boldSystemFont(ofSize: 18)
+    private let buttonFont = UIFont.init(name: "Avenir-Heavy", size: 24) ?? UIFont.boldSystemFont(ofSize: 24)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoImageView.image = UIImage.localImage("logo", template: true)
-        logoImageView.tintColor = tintColor
+        logoImageView.image = UIImage(named: "Lyv Logo")
+
         
         titleLabel.font = titleFont
         titleLabel.text = "Welcome to Lyv"

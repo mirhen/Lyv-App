@@ -16,6 +16,8 @@ class BeaconView: UIView {
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var frameImageView: UIImageView!
+    @IBOutlet weak var longFrameImageView: UIImageView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,9 +45,12 @@ class BeaconView: UIView {
 }
     func setupUI() {
         titleView.layer.cornerRadius = 15
-        
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
-        imageView.addBorder(3, color: LyvColors.lightpink)
+        titleLable.adjustsFontSizeToFitWidth = true
+        titleLable.minimumScaleFactor = 0.2
+        imageView.layer.cornerRadius = imageView.frame.width/2
         imageView.clipsToBounds = true
+        
+//        imageView.addBorder(3, color: LyvColors.lightpink)
+        
     }
 }

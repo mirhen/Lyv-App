@@ -30,6 +30,8 @@
 		FA104DFA228E0C7200D1C48D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DF9228E0C7200D1C48D /* ProfileController.swift */; };
 		FA104DFC228E32AD00D1C48D /* OldBeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DFB228E32AD00D1C48D /* OldBeaconCell.swift */; };
 		FA104E00228E51A400D1C48D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA104DFF228E51A400D1C48D /* HomeController.swift */; };
+		FA31443722AA3190004D131D /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31443622AA3190004D131D /* DetailsController.swift */; };
+		FA31443922AA3D93004D131D /* PescribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31443822AA3D93004D131D /* PescribeCell.swift */; };
 		FA72409C22954AAC00F2E352 /* BeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72409B22954AAC00F2E352 /* BeaconCell.swift */; };
 		FA9C85102296A57000A35B92 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C850F2296A57000A35B92 /* UpdateController.swift */; };
 		FAA75BB4229456A100A6EB92 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA75BB3229456A100A6EB92 /* LandingController.swift */; };
@@ -95,6 +97,8 @@
 		FA104DF9228E0C7200D1C48D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		FA104DFB228E32AD00D1C48D /* OldBeaconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldBeaconCell.swift; sourceTree = "<group>"; };
 		FA104DFF228E51A400D1C48D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		FA31443622AA3190004D131D /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		FA31443822AA3D93004D131D /* PescribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PescribeCell.swift; sourceTree = "<group>"; };
 		FA72409B22954AAC00F2E352 /* BeaconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCell.swift; sourceTree = "<group>"; };
 		FA9C850F2296A57000A35B92 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		FAA75BB3229456A100A6EB92 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				FAA75BB92294582B00A6EB92 /* SignUpController.swift */,
 				FAA75BBB2294599900A6EB92 /* LoginController.swift */,
 				FA9C850F2296A57000A35B92 /* UpdateController.swift */,
+				FA31443622AA3190004D131D /* DetailsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				FA104DFB228E32AD00D1C48D /* OldBeaconCell.swift */,
 				FA72409B22954AAC00F2E352 /* BeaconCell.swift */,
 				FAD2C13722A0E20F00D30834 /* BeaconView.swift */,
+				FA31443822AA3D93004D131D /* PescribeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,10 +597,12 @@
 				FA104DFC228E32AD00D1C48D /* OldBeaconCell.swift in Sources */,
 				FAA75BB6229456E500A6EB92 /* Helper.swift in Sources */,
 				FA104DF8228E06A400D1C48D /* ViewController+Utility.swift in Sources */,
+				FA31443722AA3190004D131D /* DetailsController.swift in Sources */,
 				FAA75BBA2294582B00A6EB92 /* SignUpController.swift in Sources */,
 				FA9C85102296A57000A35B92 /* UpdateController.swift in Sources */,
 				FA104DAE228DDACE00D1C48D /* AppDelegate.swift in Sources */,
 				FA104DF6228E03AB00D1C48D /* BeaconService.swift in Sources */,
+				FA31443922AA3D93004D131D /* PescribeCell.swift in Sources */,
 				FA104DFA228E0C7200D1C48D /* ProfileController.swift in Sources */,
 				FAD2C13822A0E20F00D30834 /* BeaconView.swift in Sources */,
 				FA104DEA228DEAAB00D1C48D /* Constants.swift in Sources */,

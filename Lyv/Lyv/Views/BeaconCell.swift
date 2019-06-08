@@ -28,6 +28,9 @@ class BeaconCell: UICollectionViewCell {
         
         if let beacon = beacon {
             beaconView.imageView.image = UIImage(data: beacon.imageData)
+            beaconView.imageView.maskCircle()
+            beaconView.frameImageView.isHidden = true
+            beaconView.longFrameImageView.isHidden = true
             beaconView.titleLable.text = beacon.title
         }
         
