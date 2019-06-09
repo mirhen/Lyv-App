@@ -20,7 +20,7 @@ class Beacon {
     var date: Date
     var distance: Int = 5
     var description: String = ""
-    var imageData: Data = UIImage(named: "LocationPin")!.jpegData(compressionQuality: 0.5)!
+    var imageData: Data = UIImage(named: "user")!.jpegData(compressionQuality: 0.5)!
     var uid: String
     var key: String?
     var latitude: Float
@@ -76,15 +76,16 @@ class Beacon {
     
     func creatAnnotationNode(withLine: Bool = false, currentLocation: CLLocation) -> LocationAnnotationNode {
         
-        let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 100)
+        let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)), altitude: 15)
         print(self.title, location)
         let image = UIImage(data: self.imageData)!//UIImage(data: self.imageData)!
         
         let distance = currentLocation.distance(from: CLLocation(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude))) / 1609.344
         
         let size = setSizeFrom(CGFloat(distance))
+        print(title, size)
         let frame = CGRect(origin: CGPoint.init(), size: CGSize(width: 125, height: 300))// setViewFrame(distance: CGFloat(distance))
-        print(self.title, frame)
+//        print(self.title, frame)
         //Instantiate Beacon View
         let view = BeaconView(frame: frame)
         view.imageView.image = image
@@ -111,8 +112,8 @@ class Beacon {
         
         let maxDistance: CGFloat = 1
         
-        let maxSize = CGSize(width: 187.5, height: 450)
-        let minSize = CGSize(width: 62.5, height: 150)
+        let maxSize = CGSize(width: 125, height: 300)
+        let minSize = CGSize(width: 31.25, height: 75)
         
         
         let distancePercentage = (distance / maxDistance)
